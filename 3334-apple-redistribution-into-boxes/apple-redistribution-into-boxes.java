@@ -10,8 +10,8 @@ class Solution {
            count++;
            sum-=capacity[i];
            if(sum<=0)
-            return count; 
+                break;
         }
-        return -1;
+        return count;
     }
 }
