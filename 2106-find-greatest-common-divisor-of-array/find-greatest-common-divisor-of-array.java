@@ -1,8 +1,11 @@
 class Solution {
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        int min = nums[0];
-        int max = nums[nums.length-1];
+       int min = 1001;
+       int max = 0;
+       for(int i=0;i<nums.length;i++){
+        min = Math.min(nums[i],min);
+        max = Math.max(nums[i], max);
+       }
         // return GCD( nums[nums.length-1] , nums[0]);
         while(min!=0){
             int temp = max%min;
