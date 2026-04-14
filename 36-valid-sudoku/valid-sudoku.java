@@ -3,15 +3,7 @@ class Solution {
         for(int i=0;i<9;i++){
            if (i != col && board[row][i] == board[row][col]) return false;
            if (i != row && board[i][col] == board[row][col]) return false;
-        }
-
-        int startRow = (row / 3) * 3;
-        int startCol = (col / 3) * 3;
-        for (int i = startRow; i < startRow + 3; i++) {
-            for (int j = startCol; j < startCol + 3; j++) {
-                if (i == row && j == col) continue;
-                if (board[i][j] == board[row][col]) return false;
-            }
+           if ((3 * (row / 3) + i / 3 != row || 3 * (col / 3) + i % 3 != col) && board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == board[row][col]) return false;
         }
         return true;
     }
